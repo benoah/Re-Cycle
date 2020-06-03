@@ -1,3 +1,78 @@
+/*
+Theme Name: spaceX
+Theme URI: 
+Author: ben noah
+Author URI: 
+Description: student for Noroff work with påortofolio
+Version: 1.1
+*/
+
+
+/*--------------------------------------------------------------
+Table of Contents
+----------------------------------------------------------------
+# Reset CSS
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Layout
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Reset CSS
+--------------------------------------------------------------*/
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+input, select, textarea, button,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, section, summary,
+time, mark, audio, video {
+	background: 0;
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+  vertical-align: baseline;
+  
+}
+
+
+/*--------------------------------------------------------------
+# body
+--------------------------------------------------------------*/
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 0.3px;
+  line-height: 1.5;  
+}
+
+/*--------------------------------------------------------------
+# nav
+--------------------------------------------------------------*/
+
 /* Main menu positionning */
 .main-nav {
     display: flex;
@@ -7,11 +82,12 @@
     left: 0;
     bottom: 0;
     text-align: center;
-    background: #FFF;
+    background:white;
     opacity: 0;
     z-index: -1;
     visibility: hidden;
     transition: all .375s;
+    
 }
 
 .main-nav.is-open {
@@ -32,6 +108,7 @@
    transform-origin: 0 0;
    transform: skew(-14deg) translateX(-120%);
    transition: all .275s .1s;
+   
 }
 
 .main-nav.is-open::before {
@@ -46,6 +123,7 @@
    align-items: flex-end;
    justify-content: center;
    transform: translateX(-18%) skew(-16deg);
+   
 }
 
 .main-nav li {
@@ -118,7 +196,8 @@
 	margin: 0 auto;
 	background:  #343638;
 	transform: skew(5deg);
-	transition: all .275s;
+    transition: all .275s;
+ 
 }
 
 .burger:after,
@@ -168,19 +247,114 @@
 .device {
     display: flex;
     flex-direction: column;
+    height: 100px;
+
+    
 }
 .container {
-	position: absolute;
-	top: 0; right: 0;
-	bottom: 0; left: 0;
-	overflow: hidden;
-	background: linear-gradient(to bottom, #eee, #ddd);
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #eee, #ddd);
+    height: 200px;
+        
+
 }
 
 .logo{
     font-family: 'Chivo', sans-serif;
-    font-weight: 900;
+    font-weight: 500;
     color: #FA6980;
-    display: block;
-    margin-left: 8px;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+	margin-top: .5em;
+    padding: 16px;
+    display: inline-block;
 }
+/*--------------------------------------------------------------
+# Hero-Image
+--------------------------------------------------------------*/
+.hero-image {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    width: 100vw;
+    height: 100vh;
+    /* Flexbox stuff */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* Text styles */
+    text-align: center;
+    color: white; /* ADD THIS LINE */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../img/Backgroundredigert.jpg');
+  }
+
+  .hero-title {
+    font-size: 2em;
+    /* Margins */
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    padding: 8px;
+  }
+
+  .hero-text {
+    font-size: 16px;
+    text-align: left;
+    /* Margins */
+    padding: 8px;
+  }
+ 
+
+  .style{
+    background-color: #FA6980 ;
+    width: 118px;
+    color: white;
+    font-size: 14px;
+    height: 16px;
+    padding: 18px 32px;
+    margin-left: 8px;
+    margin-top: 8px;
+  }
+
+
+ @media screen and (min-width: 812px){
+
+    .hero-image {
+     padding: 48px;
+     margin: auto;
+      }
+    
+ 
+    .hero-title {
+        font-size: 3em;
+        /* Margins */
+        margin-top: 0;
+        margin-bottom: 0.5em;
+        padding: 16px;
+      }
+
+
+      .hero-text {
+        font-size: 24px;
+        text-align: left;
+        /* Margins */
+      }
+
+      .style{
+        background-color: #FA6980 ;
+        width: 118px;
+        color: white;
+        font-size: 14px;
+        height: 16px;
+        padding: 18px 32px;
+        margin-left: 50%;
+        margin-top: 5%;
+      } 
+     
+
+ }
+    
