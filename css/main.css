@@ -576,9 +576,7 @@ h4{
 }
 .formstyle ul li input[type="button"], 
 .formstyle ul li input[type="submit"] {
-	-moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
-	-webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
-	box-shadow: inset 0px 1px 0px 0px #3985B1;
+
 	background-color:#FA6980;
 	border: 1px solid #17445E;
 	display: inline-block;
