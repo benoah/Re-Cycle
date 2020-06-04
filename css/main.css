@@ -77,8 +77,7 @@ h2{
     font-family: 'Helvetica', sans-serif;
     font-size: 24px;
     font-weight: bold;
-    color: #202124;
-}
+	color: #5A3B5D;}
 
 h3{
     font-family: 'Helvetica', sans-serif;
@@ -96,30 +95,25 @@ h4{
 /*--------------------------------------------------------------
 # nav
 --------------------------------------------------------------*/
-
 /* Main menu positionning */
 .main-nav {
-    display: flex;
-    flex-direction: column;
+    position: absolute;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
     text-align: center;
-    background:white;
+    background: #FFF;
     opacity: 0;
     z-index: -1;
     visibility: hidden;
     transition: all .375s;
-    
 }
-
 .main-nav.is-open {
     opacity: 1;
     z-index: 100;
     visibility: visible;
 }
-
 /* Yellow band effect */
 .main-nav::before {
     content: '';
@@ -128,33 +122,30 @@ h4{
    bottom: 0;
    left: 0;
    right: -15px;
-   background: #F6F8F9;
+   background: #FA6980;
    transform-origin: 0 0;
    transform: skew(-14deg) translateX(-120%);
    transition: all .275s .1s;
-   
 }
 
 .main-nav.is-open::before {
    transform: skew(-14deg) translateX(0);
 }
-
 /* Skewing effect on menu links */
 .main-nav ul {
-   display: inline-flex;
-   flex-direction: column;
-   height: 100%; 
-   align-items: flex-end;
-   justify-content: center;
-   transform: translateX(-18%) skew(-16deg);
-   
+    display: inline-flex;
+    flex-direction: column;
+    height: 93%; /* Should be 100%, but we have a notice message :D */
+    align-items: flex-end;
+    justify-content: center;
+    transform: translateX(-18%) skew(-16deg);
 }
 
 .main-nav li {
-   display: block;
-   margin: .5rem 0;
-   text-align: right;
-   transform: skew(16deg);
+    display: block;
+    margin: .5rem 0;
+    text-align: right;
+    transform: skew(16deg);
 }
 /* Apparition effect on links */
 .main-nav a {
@@ -181,6 +172,7 @@ h4{
 .main-nav li:nth-child(5) a {
 	transition: all 275ms 375ms
 }
+
 /* Decoration */
 .main-nav ul,
 .main-nav li {
@@ -190,12 +182,10 @@ h4{
 .main-nav a {
 	display: block;
 	padding: 12px 0;
-	color: #343638;
+	color: #5A3B5D;
 	font-size: 1.4em;
 	text-decoration: none;
-    font-weight: bold;
-    font-family: "Helvetica";
-    font-weight: bold;
+	font-weight: bold;
 }
 
 /* Burger Style: @see: https://codepen.io/CreativeJuiz/full/oMZNXy */
@@ -207,11 +197,11 @@ h4{
 	z-index: 1000;
 	background: none;
 	border: 0;
-    cursor: pointer;
-    
+	cursor: pointer;
 }
+
 .open-main-nav:focus {
-    outline: none;
+	outline: none;
 }
 .burger {
 	position: relative;
@@ -219,24 +209,22 @@ h4{
 	width: 28px;
 	height: 4px;
 	margin: 0 auto;
-	background:  #343638;
+	background:  #f85051;
 	transform: skew(5deg);
-    transition: all .275s;
- 
+	transition: all .275s;
 }
-
 .burger:after,
 .burger:before {
 	content: '';
 	display: block;
 	height: 100%;
-	background:  #343638;
+	background:  #f85051;
 	transition: all .275s;
 }
 
-
 .burger:after {
-	transform: translateY(-12px) translateX(-2px) skew(-20deg);
+    transform: translateY(-12px) translateX(-2px) skew(-20deg);
+    background:  #f85051;
 }
 
 .burger:before {
@@ -257,8 +245,6 @@ h4{
     opacity: 0;
 }
 
-/* MENU Text part */
-
 .burger-text {
 	display: block;
 	font-size: .675rem;
@@ -267,27 +253,13 @@ h4{
 	text-transform: uppercase;
 	font-weight: 500;
 	text-align: center;
-	color: #343638;
-}
-.device {
-    display: flex;
-    flex-direction: column;
-    height: 100px;
-
-    
-}
-.container {
-    
-    background: linear-gradient(to bottom, #eee, #ddd);
-    height: 400px;
-        
-
+	color: #f85051;
 }
 
 .logo{
     font-family: 'Chivo', sans-serif;
     font-weight: 500;
-    color: #FA6980;
+    color: #f85051;
     font-size: 1rem;
     line-height: 1.2;
     text-transform: uppercase;
@@ -296,6 +268,8 @@ h4{
     padding: 16px;
     display: inline-block;
 }
+
+
 /*--------------------------------------------------------------
 # Hero-Image
 --------------------------------------------------------------*/
@@ -502,9 +476,6 @@ h4{
         padding: 32px;
     }
 
-
-
-
     .imgh{
         margin-top: 0px;
         background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../img/Yellowstonepark.jpg');
@@ -592,3 +563,251 @@ h4{
 	background-color: #28739E;
 }
 
+.justering{
+width: 46.5px;
+height:66 ;
+margin-left:16px;
+border-radius: 50%;
+
+}
+.news{
+    display: flex;
+    justify-content: colum;
+    display: pre-wrap;
+    
+}
+
+.textholder{
+    padding: 16px;
+}
+
+
+
+@media screen and (min-width: 812px){
+
+ .textholder{
+        padding: 24px;
+        color: #A6ADB4;
+        display: flex;
+        justify-content: space-evenly;
+        display: pre-wrap;
+      ´
+    }
+
+    .justering{
+        height: 181px;
+         width: 160px;
+         border-radius: 50%;
+          margin-left:16px;
+        }
+
+   }
+
+  
+  .imgholdernews{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../img/guideone.jpg');
+    background-size:cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    color:#FFFFFF ;
+    padding: 32px;
+  }
+
+
+
+  .imgholdernewsuno{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../img/Yellowstonepark.jpg');
+    background-size:cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    color:#FFFFFF ;
+    padding: 32px;
+ 
+  }
+
+
+.color{
+    color: white;
+    padding: 24px;
+}
+ 
+
+@media screen and (min-width: 812px){
+
+
+    .carditem{
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        justify-content: baseline;
+
+        justify-content: space-evenly;
+
+    }
+    .cardHolder{
+        justify-content: baseline;
+    }
+
+
+    .imgholdernews{
+     
+        width: 780px;
+        height: 430px;
+      }
+
+      .imgholdernewsuno,img{
+     
+        width: 780px;
+        height: 430px;
+      }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+   /*--------------------------------------------------------------
+# footer
+--------------------------------------------------------------*/
+
+.footerContainer{
+    
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+      align-items: stretch;
+    display: block;
+    height: 100vh;
+    background-color: #F6F8F9;
+    padding: 24px;
+    height: 60vh;
+    
+  
+    }
+    
+  
+   .footerContainer .footer-center{
+    display: flex;
+    flex-direction: column;
+    
+  
+  }
+  
+  
+  /* The company logo */
+  .footer-center img{
+  }
+  
+  .footerContainer .footer-links{
+    color:  #ffffff;
+    margin: 20px 0 12px;
+    width: 100%;
+    
+    
+  }
+  
+  
+  
+  .footerContainer .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: #343638;
+font-weight: 700;
+  
+  }
+  
+  .fa {
+    padding: 16px;
+    font-size: 24px;
+    width: 24px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+    
+  }
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  .fa-facebook {
+  background: #3B5998;
+  color: white;
+  }
+  .fa-twitter {
+  background: #55ACEE;
+  color: white;
+  }
+  .fa-instagram {
+  background: #125688;
+  color: white;
+  }
+  
+  .spec{
+    font-family: 'Futura PT Book';
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    }
+    
+    .Bannerex{
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      color: white;
+      background: #202020; 
+      padding: 24px;
+  
+      }
+  
+    .BannerCont{
+      padding: 24px;
+      widows: 100%;
+   }
+
+
+   @media screen and (min-width: 812px){
+    .color{
+        color: white;
+        padding: 24px;
+    }
+    
+    .footer{
+        display: block;
+    }
+  
+    .flexcolum{
+        display: flex-end;
+    }
+   
+    
+    
+      }
+
+
+
+   
