@@ -150,10 +150,19 @@ h4 {
   font-size: 16px;
   font-weight: bold;
   color: #202124;
+  text-align: center;
 }
 
 .right {
   color: #202124;
+}
+.farge{
+  
+   color: #a6adb4;
+}
+.advice{
+  color: #fa6980;
+  font-weight: bold;
 }
 
 /*--------------------------------------------------------------
@@ -375,7 +384,7 @@ been using this page for inspiration https://freefrontend.com/css-hero-effects/
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 100vh;
+  height: 50vh;
   /* Flexbox stuff */
   display: flex;
   flex-direction: column;
@@ -391,28 +400,53 @@ been using this page for inspiration https://freefrontend.com/css-hero-effects/
 .hero-title {
   font-size: 24px;
   font-weight: 700;
+  margin-left: 16px;
+
   /* Margins */
-  margin-top: 0;
-  margin-bottom: 0.5em;
 }
 .hero-text {
   font-size: 16px;
   text-align: left;
-  margin-bottom: 16px;
+
   /* Margins */
+}
+.butte{
+  margin-left: 128px;
 }
 .style {
   background-color: #fa6980;
   width: 151px;
   color: white;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+@media screen and (min-width: 812px) {
+.hero-title {
+  display: flex;
+  font-size: 24px;
+  font-weight: 700;
+  display: pre-wrap;
+  text-align: center;
+  /* Margins */
+}
+.hero-text {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  display: pre-wrap;
+  text-align: left;
 
+
+  /* Margins */
+}
+
+
+
+}
 /*--------------------------------------------------------------
 # cardholder
 --------------------------------------------------------------*/
@@ -426,14 +460,17 @@ been using this page for inspiration https://freefrontend.com/css-hero-effects/
   align-items: stretch;
   background-color: #ffffff;
   margin: auto;
+  text-align: center;
+  padding: 16px;
+ 
 }
 
 .cardHolderContainer {
   color: #a6adb4;
   line-height: 2;
-  font-size: 16px;
-  display: pre-line;
-  padding: 24px;
+  font-size: 13px;
+  font-family: "Acumin Pro", sans-serif;
+
 }
 
 .link {
@@ -454,41 +491,48 @@ been using this page for inspiration https://freefrontend.com/css-hero-effects/
 }
 
 .right {
-  padding: 16px;
 }
 
 /*--------------------------------------------------------------
 # imgholder
 --------------------------------------------------------------*/
+
 .imgholder {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../img/guideone.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 50vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-direction: column;
   color: #ffffff;
+
   padding: 32px;
+  margin: 0px;
+  text-align: center;
+
 }
 
 .imgholder,
 h2 {
   color: white;
+  font-family: "Helvetica", sans-serif;
+  font-weight: 400;
 }
 
 .imgholder,
 p {
   padding: 16px;
   line-height: 2;
+  
 }
 
 .imgh {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../img/Yellowstonepark.jpg");
-  margin-top: 16px;
+  
 }
 
 @media screen and (min-width: 812px) {
@@ -499,13 +543,14 @@ p {
     background-position: center center;
     background-repeat: no-repeat;
     height: 70vh;
-    width: 70vh;
+    width: 60vh;
     display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
     color: #ffffff;
-    padding: 32px;
+
+    
   }
 
   .imgh {
@@ -515,20 +560,21 @@ p {
   }
 }
 
+
 /*--------------------------------------------------------------
 # form
 --------------------------------------------------------------*/
 .formstyle {
   background: #ffffff;
   padding: 30px;
-  margin: 50px auto;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.35);
   border-radius: 10px;
-  border: 1px solid #fa6980;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-self: auto;
+  width: auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 
@@ -549,9 +595,10 @@ p {
   -moz-box-sizing: border-box;
   padding: 8px;
   outline: none;
-  border: 1px solid #fa6980;
+  border: 1px solid  #f85051;
   -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out; 
+
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
 }
@@ -577,7 +624,7 @@ p {
 }
 .formstyle ul li input[type="button"],
 .formstyle ul li input[type="submit"] {
-  background-color: #fa6980;
+  background-color: #f85051;
   border: 1px solid #17445e;
   display: inline-block;
   cursor: pointer;
@@ -598,8 +645,15 @@ p {
 @media screen and (min-width: 812px) {
 
   .formstyle {
-   width: 50vh;
-   padding: 36px;
+   width: 100%;
+   padding: 24px;
+   margin-top: 0px;
+
+  }
+  .direction{
+    width: 100%;
+    padding: 24px;
+
   }
   .formstyle ul li textarea {
     width: 100%;
@@ -622,8 +676,8 @@ p {
 
 }
 .justering{
-  width: 100px;
-  height:100 ;
+  width: 50px;
+  height:60px ;
   border-radius: 50%;
   padding: 16px;
   
@@ -640,13 +694,14 @@ p {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 50vh;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-direction: column;
   color: #ffffff;
   padding: 32px;
+  height: 100vh;
+
 }
 
 
@@ -655,7 +710,6 @@ p {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 50vh;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -663,7 +717,126 @@ p {
   color: #ffffff;
   padding: 32px;
   margin-top: 8px;
+  height: 100vh;
+  
 }
+
+
+.boxspecial{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+
+}
+
+.globalimg{
+  display: block;
+  margin: auto;
+}
+
+
+.link{
+  margin-bottom: 16px;
+}
+.color{
+  text-align: center;
+}
+
+.imgholdernews h2{
+  text-align: center;
+  color: #f85051;
+  font-weight: bold;;
+}
+
+.imgholdernewsuno h2{
+  text-align: center;
+  color: #f85051;
+  font-weight: bold;;
+
+}
+
+
+@media screen and (min-width: 812px) {
+  .imgholdernews{
+    width: 680px;
+    height: 430px;
+    padding: 24px;
+    
+  }
+
+
+  .imgholdernewsuno{
+    width: 680px;
+    height: 430px;
+    padding: 24px;
+    margin-top: 48px;
+  }
+
+  .globalimg{
+    width: 300px;
+  }
+
+
+.hide{
+  display: none;
+}
+
+
+}
+
+
+/*--------------------------------------------------------------
+# about
+--------------------------------------------------------------*/
+.aboutImage{
+  display: flex;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width:100%;
+  height: 30%;
+  margin-bottom: 16px;
+}
+
+
+
+
+@media screen and (min-width: 812px) {
+
+
+  .aboutImage{
+    width:50%;
+    padding: 24px;
+    
+  }
+  
+}
+
+
+
+/*--------------------------------------------------------------
+# Why hike with us 
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 812px) {
+  .textholder{
+    display: flex;
+    padding: 24px;
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -743,6 +916,7 @@ p {
     
 
 
+/* Dotted red border */
 
 
 
@@ -756,6 +930,10 @@ p {
 
 @media screen and (min-width: 812px) {
 
+  .right{
+    margin-top: 16px;
+    margin-left: 16px;
+  }
 
 .justering{
   width: 92px;
@@ -767,5 +945,13 @@ p {
     display: flex;
     justify-content: space-evenly;
     padding: 32px;
+  }
+  .marginco{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+  }
+  .hide{
+    display: none;
   }
 }
