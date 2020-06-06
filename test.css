@@ -1,51 +1,890 @@
+/*
+Theme Name: spaceX
+Theme URI: 
+Author: ben noah
+Author URI: 
+Description: student for Noroff work with påortofolio
+Version: 1.1
+*/
+
+
+/*--------------------------------------------------------------
+Table of Contents
+----------------------------------------------------------------
+# Reset CSS
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Layout
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Reset CSS
+--------------------------------------------------------------*/
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+input, select, textarea, button,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, section, summary,
+time, mark, audio, video {
+	background: 0;
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+  vertical-align: baseline;
+  
+}
+
+
+/*--------------------------------------------------------------
+# body
+--------------------------------------------------------------*/
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 0.3px;
+  line-height: 1.5;  
+}
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+h2{
+    font-family: 'Helvetica', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+	color: #5A3B5D;}
+
+h3{
+    font-family: 'Helvetica', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FA6980;
+}
+h4{
+    font-family: 'Helvetica', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color:#202124;
+}
+
+/*--------------------------------------------------------------
+# nav
+--------------------------------------------------------------*/
+/* Main menu positionning */
+.main-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    background: #FFF;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+    transition: all .375s;
+}
+.main-nav.is-open {
+    opacity: 1;
+    z-index: 100;
+    visibility: visible;
+}
+/* Yellow band effect */
+.main-nav::before {
+    content: '';
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: -15px;
+   background: #FA6980;
+   transform-origin: 0 0;
+   transform: skew(-14deg) translateX(-120%);
+   transition: all .275s .1s;
+}
+
+.main-nav.is-open::before {
+   transform: skew(-14deg) translateX(0);
+}
+/* Skewing effect on menu links */
+.main-nav ul {
+    display: inline-flex;
+    flex-direction: column;
+    height: 93%; /* Should be 100%, but we have a notice message :D */
+    align-items: flex-end;
+    justify-content: center;
+    transform: translateX(-18%) skew(-16deg);
+}
+
+.main-nav li {
+    display: block;
+    margin: .5rem 0;
+    text-align: right;
+    transform: skew(16deg);
+}
+/* Apparition effect on links */
+.main-nav a {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.main-nav.is-open a {
+    opacity: 1;
+    transform: translateY(0);
+}
+.main-nav li:nth-child(1) a {
+	transition: all 275ms 175ms
+}
+.main-nav li:nth-child(2) a {
+	transition: all 275ms 225ms
+}
+.main-nav li:nth-child(3) a {
+	transition: all 275ms 275ms
+}
+.main-nav li:nth-child(4) a {
+	transition: all 275ms 325ms
+}
+.main-nav li:nth-child(5) a {
+	transition: all 275ms 375ms
+}
+
+/* Decoration */
+.main-nav ul,
+.main-nav li {
+	list-style: none;
+	padding: 0;
+}
+.main-nav a {
+	display: block;
+	padding: 12px 0;
+	color: #5A3B5D;
+	font-size: 1.4em;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/* Burger Style: @see: https://codepen.io/CreativeJuiz/full/oMZNXy */
+.open-main-nav {
+	position: absolute;
+	top: 15px;
+	padding-top: 20px;
+	right: 15px;
+	z-index: 1000;
+	background: none;
+	border: 0;
+	cursor: pointer;
+}
+
+.open-main-nav:focus {
+	outline: none;
+}
+.burger {
+	position: relative;
+	display: block;
+	width: 28px;
+	height: 4px;
+	margin: 0 auto;
+	background:  #f85051;
+	transform: skew(5deg);
+	transition: all .275s;
+}
+.burger:after,
+.burger:before {
+	content: '';
+	display: block;
+	height: 100%;
+	background:  #f85051;
+	transition: all .275s;
+}
+
+.burger:after {
+    transform: translateY(-12px) translateX(-2px) skew(-20deg);
+    background:  #f85051;
+}
+
+.burger:before {
+	transform: translateY(-16px) skew(-10deg);
+}
+
+/* Toggle State part */
+.is-open .burger {
+	transform: skew(5deg) translateY(-8px) rotate(-45deg);
+}
+
+.is-open .burger:before {
+	transform: translateY(0px) skew(-10deg) rotate(75deg);
+}
+
+.is-open .burger:after {
+	transform: translateY(-12px) translateX(10px) skew(-20deg);
+    opacity: 0;
+}
+
+.burger-text {
+	display: block;
+	font-size: .675rem;
+	letter-spacing: .05em;
+	margin-top: .5em;
+	text-transform: uppercase;
+	font-weight: 500;
+	text-align: center;
+	color: #f85051;
+}
+
+.logo{
+    font-family: 'Chivo', sans-serif;
+    font-weight: 500;
+    color: #f85051;
+    font-size: 1rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+	margin-top: .5em;
+    padding: 16px;
+    display: inline-block;
+}
+
+
+/*--------------------------------------------------------------
+# Hero-Image
+--------------------------------------------------------------*/
 .hero-image {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed; width: 100vw;
+    background-attachment: fixed; 
+    width: 100vw;
     height: 100vh;
     /* Flexbox stuff */
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     /* Text styles */
     text-align: center;
     color: white; /* ADD THIS LINE */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('/img/Backgroundredigert.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../img/Backgroundredigert.jpg');
   }
 
+  .hero-title {
+    font-size: 2em;
+    /* Margins */
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    padding: 8px;
+  }
 
+  .hero-text {
+    font-size: 16px;
+    text-align: left;
+    /* Margins */
+    padding: 8px;
+  }
+ 
 
-  .style {
+  .style{
     background-color: #FA6980 ;
     width: 118px;
     color: white;
     font-size: 14px;
     height: 16px;
     padding: 18px 32px;
-   margin: auto;
-    position: absolute;
-    z-index: 1;
-    top: 60%;
-    left: 0;
-    right: 0;
-}    
+    margin-left: 8px;
+    margin-top: 8px;
+  }
 
 
+ @media screen and (min-width: 812px){
 
-.imgholdernews{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../img/guideone.jpg');
-  background-size:cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  height: 100vh;
-   color:#FFFFFF ;
+    .hero-image {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .hero-title {
+        font-size: 3em;
+        margin-bottom: -0.5em;
+
+      }
+    
+      .hero-text {
+        font-size: 20px;
+        text-align: center;
+        /* Margins */
+      
+      }
+     
+
+
+ }
+
+/*--------------------------------------------------------------
+# card-Holder
+--------------------------------------------------------------*/
+.cardHolder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    padding: 24px;
+    margin: auto;
+    background-color: #FFFFFF;
 }
+
+.cardHolderContainer{
+    margin: auto;
+    color: #A6ADB4;
+    line-height: 2;
+    font-size: 16px;
+    display: pre-wrap;
+}
+
+.link{
+    color: red;
+    font-family: helvetica;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 10px;
+    margin: auto;
+}
+
+
+
+.link:hover {
+    text-decoration: underline;
+  }
+  
+.right{
+    margin-left: 16px;
+    margin-top: 8px;
+}
+.globalimg{
+    height: 154px;
+    width: 337px;
+}
+
+@media screen and (min-width: 812px){
+
+  .flexbox{
+      display: flex;
+      justify-content: space-evenly;
+      padding: 32px;
+    
+  }
+
+
+.cardHolderContainer{
+    display: flex;
+    flex-direction: column;
+    line-height: 2;   
+}
+
+.globalimg{
+    height: 181px;
+    width: 360px;
+}
+
+ }
+
+ 
+.imgholder{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../img/guideone.jpg');
+    background-size:cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    color:#FFFFFF ;
+    padding: 32px;
+}
+
+.imgh{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../img/Yellowstonepark.jpg');
+    margin-top: 16px;
+   
+}
+
+
+.imgholder h2{
+    color:#FFFFFF ;
+    font-weight: bold;
+    font-size: 24px;
+    display: pre-wrap;
+
+}
+..imgholder p{
+    color:#FFFFFF ;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 2;
+    display: pre-wrap;
+    padding: 32px;
+
+}
+
+@media screen and (min-width: 812px){
+
+    .flexbox{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 32px;
+    }
+    .imgholder{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../img/guideone.jpg');
+        background-size:cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 70vh;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        color:#FFFFFF ;
+        padding: 32px;
+    }
+
+    .imgh{
+        margin-top: 0px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../img/Yellowstonepark.jpg');
+    }
+    
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.formstyle{
+	background: #FFFFFF;
+	padding: 30px;
+	margin: 50px auto;
+	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+	border-radius: 10px;
+    border: 1px solid #FA6980 ;
+    display: flex;
+    justify-content: center;
+    align-self: auto;
+    width: 90;
+
+}
+
+
+
+.formstyle ul{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+.formstyle ul li{
+	display: block;
+	margin-bottom: 20px;
+	min-height: 35px;
+}
+.formstyle ul li  .field-style{
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	padding: 8px;
+	outline: none;
+	border: 1px solid #FA6980;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+
+}.formstyle ul li  .field-style:focus{
+	box-shadow: 0 0 5px #B0CFE0;
+	border:1px solid #B0CFE0;
+}
+.formstyle ul li .field-split{
+	width: 49%;
+}
+.formstyle ul li .field-full{
+	width: 100%;
+}
+.formstyle ul li input.align-left{
+	float:left;
+}
+.formstyle ul li input.align-right{
+	float:right;
+}
+.formstyle ul li textarea{
+	width: 100%;
+	height: 100px;
+}
+.formstyle ul li input[type="button"], 
+.formstyle ul li input[type="submit"] {
+
+	background-color:#FA6980;
+	border: 1px solid #17445E;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	padding: 8px 18px;
+	text-decoration: none;
+	font: 12px Arial, Helvetica, sans-serif;
+}
+.formstyle ul li input[type="button"]:hover, 
+.formstyle ul li input[type="submit"]:hover {
+	background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+	background-color: #28739E;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.justering{
+width: 46.5px;
+height:66 ;
+margin-left:16px;
+border-radius: 50%;
+
+}
+.news{
+    display: flex;
+    justify-content: colum;
+    display: pre-wrap;
+    
+}
+
+.textholder{
+    padding: 16px;
+}
+
 
 
 @media screen and (min-width: 812px){
 
+ .textholder{
+        padding: 24px;
+        color: #A6ADB4;
+        display: flex;
+        justify-content: space-evenly;
+        display: pre-wrap;
+      ´
+    }
+
+    .justering{
+        height: 181px;
+         width: 160px;
+         border-radius: 50%;
+          margin-left:16px;
+        }
+
+   }
+
+  
+  .imgholdernews{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../img/guideone.jpg');
+    background-size:cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    color:#FFFFFF ;
+    padding: 32px;
+  }
 
 
+
+  .imgholdernewsuno{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../img/Yellowstonepark.jpg');
+    background-size:cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    color:#FFFFFF ;
+    padding: 32px;
+ 
+  }
+
+
+.color{
+    color: white;
+    padding: 24px;
+}
+ 
+
+@media screen and (min-width: 812px){
+
+
+    .carditem{
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        justify-content: baseline;
+
+        justify-content: space-evenly;
+
+    }
+    .cardHolder{
+        justify-content: baseline;
+    }
+
+
+    .imgholdernews{
+        width: 680px;
+        height: 430px;
+    }
+
+    
+      .imgholdernewsuno,img{
+     
+        width: 680px;
+        height: 430px;
+      }
 
 }
+
+
+
+.aboutimg{
+  max-width: 90%;
+  margin: auto;
+  padding: 5%;
+}
+
+
+
+.box{
+ padding: 24px;
+ line-height: 2;
+}
+
+
+@media screen and (min-width: 812px){
+  .aboutimg{
+    min-height: 400px;
+    max-width: 588px;
+  }
+
+  .flexbox,uno{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: stretch;
+    background: #FFFFFF;
+    padding: 24px;
+    margin:8px;
+  }
+  .box{
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+
+
+   /*--------------------------------------------------------------
+# footer
+--------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+.footerContainer{
+    
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+      align-items: stretch;
+    display: block;
+    height: 100vh;
+    background-color: #F6F8F9;
+    padding: 24px;
+    height: 60vh;
+    
+  
+    }
+    
+  
+   .footerContainer .footer-center{
+    display: flex;
+    flex-direction: column;
+    
+  
+  }
+  
+  
+  /* The company logo */
+  .footer-center img{
+  }
+  
+  .footerContainer .footer-links{
+    color:  #ffffff;
+    margin: 20px 0 12px;
+    width: 100%;
+    
+    
+  }
+  
+  
+  
+  .footerContainer .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: #343638;
+font-weight: 700;
+  
+  }
+  
+  .fa {
+    padding: 16px;
+    font-size: 24px;
+    width: 24px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+    
+  }
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  .fa-facebook {
+  background: #3B5998;
+  color: white;
+  }
+  .fa-twitter {
+  background: #55ACEE;
+  color: white;
+  }
+  .fa-instagram {
+  background: #125688;
+  color: white;
+  }
+  
+  .spec{
+    font-family: 'Futura PT Book';
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    }
+    
+    .Bannerex{
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      color: white;
+      background: #202020; 
+      padding: 24px;
+  
+      }
+  
+    .BannerCont{
+      padding: 24px;
+      widows: 100%;
+   }
+
+
+   @media screen and (min-width: 812px){
+    .color{
+        color: white;
+        padding: 24px;
+    }
+    
+    .footer{
+        display: block;
+    }
+  
+    .flexcolum{
+        display: flex-end;
+    }
+   
+    
+      }
