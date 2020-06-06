@@ -653,6 +653,18 @@ border-radius: 50%;
    }
 
   
+
+
+
+
+
+
+
+
+
+
+
+
   .imgholdernews{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../img/guideone.jpg');
     background-size:cover;
@@ -689,6 +701,36 @@ border-radius: 50%;
     color: white;
     padding: 24px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 
 @media screen and (min-width: 812px){

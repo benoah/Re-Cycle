@@ -461,8 +461,7 @@ been using this page for inspiration https://freefrontend.com/css-hero-effects/
 # imgholder
 --------------------------------------------------------------*/
 .imgholder {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/guideone.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../img/guideone.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -635,43 +634,47 @@ p {
 # imageholder
 --------------------------------------------------------------*/
 
-  .imgholdernews{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../img/guideone.jpg');
-    background-size:cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    color:#FFFFFF ;
-    padding: 32px;
-  }
-
-
-
-  .imgholdernewsuno{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../img/Yellowstonepark.jpg');
-    background-size:cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    color:#FFFFFF ;
-    padding: 32px;
-    margin-top: 8px;
  
-  }
-
-
-.color{
-    color: white;
-    padding: 24px;
+.imgholdernews{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../img/india.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  color: #ffffff;
+  padding: 32px;
 }
+
+
+.imgholdernewsuno{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../img/Yellowstonepark.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  color: #ffffff;
+  padding: 32px;
+  margin-top: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*--------------------------------------------------------------
